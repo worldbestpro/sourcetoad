@@ -1,0 +1,120 @@
+//color variables
+$white: #fff;
+$black: #000;
+$dark-gray: #333;
+$medium-gray: #444;
+$gray: #a5a5a5;
+$light-gray: #c4c4c4;
+$orange: #ff9d20;
+$light-orange: #ffb657;
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  color: $white;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-flow: row nowrap;
+}
+
+.column {
+  flex-flow: column wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.jc-sp-btw {
+  justify-content: space-between;
+}
+
+.jc-sp-around {
+  justify-content: space-around;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1px;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#calc {
+  width: 385px;
+  height: 775px;
+  background-color: $black;
+  border-radius: 70px;
+  border: 10px solid $dark-gray;
+  #viewport {
+    width: 90%;
+    height: 70%;
+    #display {
+      width: 100%;
+      input {
+        border: none;
+        outline: none;
+        font-size: 6rem;
+        background-color: $black;
+        width: 100%;
+        text-align: right;
+        padding-right: 20px;
+      }
+    }
+    #keypad {
+      width: 97%;
+      button {
+        border: none;
+        width: 83px;
+        height: 83px;
+        font-size: 2rem;
+        cursor: pointer;
+        &.fx-key {
+          background-color: $gray;
+          color: $black;
+          &:hover {
+            background-color: $light-gray;
+          }
+        }
+        &.numeric-key {
+          background-color: $gray;
+          &:hover {
+            background-color: $medium-gray;
+          }
+        }
+        &.op-key {
+          background-color: $orange;
+          font-size: 3rem;
+          &:hover {
+            background-color: $light-orange;
+          }
+        }
+        &.special {
+          width: 100%;
+          grid-column-start: 1;
+          grid-column-end: span 2;
+          text-align: left;
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+}
